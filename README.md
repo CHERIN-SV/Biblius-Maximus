@@ -65,51 +65,51 @@ It combines **online book shopping** with **virtual reality**, giving users the 
 - Clicking a category button loads books dynamically with stock & price updates.  
 
 ---
-##📘 Developer Guide
+**📘 Developer Guide**
 
 Welcome to the **Biblius Maximus Developer Guide** – your quick start manual for running, building, and contributing to the project. This guide covers everything from starting the local development server to testing and building production-ready artifacts.
 
-##🚀 Development Server
+🚀 Development Server
 
-ng serve
+**ng serve**
 
-Navigate to http://localhost:4200
+Navigate to **http://localhost:4200**
 
 The app reloads automatically when files change.
 
-##🛠️ Code Scaffolding
+**🛠️ Code Scaffolding**
 
 Easily generate new Angular components, directives, or services with the CLI:
 
-ng generate component component-name
+**ng generate component component-name**
 
 For a complete list of available schematics:
 
-ng generate --help
+**ng generate --help**
 
-##📦 Building
+**📦 Building**
 
 To build the project for production:
 
-ng build
+**ng build**
 
 Compiled and optimized files will be available in the dist/ directory.
 
-##✅ Running Unit Tests
+**✅ Running Unit Tests**
 
 Execute unit tests with Karma:
 
-ng test
+**ng test**
 
-##🔎 Running End-to-End Tests
+**🔎 Running End-to-End Tests**
 
 Run automated e2e tests with:
 
-ng e2e
+**ng e2e**
 
 ⚠️ Note: Angular CLI does not include an e2e framework by default. You can integrate Cypress, Protractor, or Playwright based on your needs.
 
-##📚 Additional Resources
+**📚 Additional Resources**
 
 Angular CLI Documentation
 
