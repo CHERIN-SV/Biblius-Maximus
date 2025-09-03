@@ -67,7 +67,7 @@ It combines **online book shopping** with **virtual reality**, giving users the 
 ---
 
 ## 🗄️ Firestore Database Structure
-
+'''plaintext
 Firestore Root
 │
 ├── users (collection)
@@ -115,7 +115,7 @@ Firestore Root
         ├── Book_Title
         ├── Date_Opened (timestamp)
         ├── Email
-        └── Name
+        └── Name'''
 
 
 📘 Developer Guide
