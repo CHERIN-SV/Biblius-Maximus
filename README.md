@@ -67,7 +67,7 @@ It combines **online book shopping** with **virtual reality**, giving users the 
 ---
 
 ## 🗄️ Firestore Database Structure
-'''plaintext
+```plaintext
 Firestore Root
 │
 ├── users (collection)
