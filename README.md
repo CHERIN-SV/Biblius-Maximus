@@ -66,6 +66,64 @@ It combines **online book shopping** with **virtual reality**, giving users the 
 
 ---
 
+## 📘 Developer Guide
+
+Welcome to the **Biblius Maximus Developer Guide** – your quick start manual for running, building, and contributing to the project. This guide covers everything from starting the local development server to testing and building production-ready artifacts.
+
+### 🚀 Development Server
+To spin up the project locally, run:
+```bash
+ng serve
+
+Then open http://localhost:4200
+ in your browser.
+The app will automatically reload whenever you modify the source code.
+
+🛠️ Code Scaffolding
+
+Easily generate new Angular components, directives, or services with the CLI:
+
+ng generate component component-name
+
+
+For a complete list of available schematics:
+
+ng generate --help
+
+📦 Building
+
+To build the project for production:
+
+ng build
+
+
+Compiled and optimized files will be available in the dist/ directory.
+
+✅ Running Unit Tests
+
+Execute unit tests with Karma:
+
+ng test
+
+🔎 Running End-to-End Tests
+
+Run automated e2e tests with:
+
+ng e2e
+
+
+⚠️ Note: Angular CLI does not include an e2e framework by default. You can integrate Cypress, Protractor, or Playwright based on your needs.
+
+📚 Additional Resources
+
+Angular CLI Documentation
+
+Firebase Documentation
+
+A-Frame VR Documentation
+
+SCSS Documentation
+
 ## 🗄️ Firestore Database Structure
 ```plaintext
 Firestore Root
@@ -118,11 +176,9 @@ Firestore Root
         └── Name
 
 
-## 📘 Developer Guide
+#####📧 Contact
 
-Welcome to the **Biblius Maximus Developer Guide** – your quick start manual for running, building, and contributing to the project. This guide covers everything from starting the local development server to testing and building production-ready artifacts.
+For support or project-related queries:
+📩 cherinpappu207@gmail.com
 
-### 🚀 Development Server
-To spin up the project locally, run:
-```bash
-ng serve
+✨ Step into the future of book shopping with Biblius Maximus – where VR meets e-commerce!
