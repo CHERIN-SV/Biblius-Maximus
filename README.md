@@ -65,8 +65,11 @@ It combines **online book shopping** with **virtual reality**, giving users the 
 - Clicking a category button loads books dynamically with stock & price updates.  
 
 ---
-📘 Developer Guide
-🚀 Development Server
+##📘 Developer Guide
+
+Welcome to the **Biblius Maximus Developer Guide** – your quick start manual for running, building, and contributing to the project. This guide covers everything from starting the local development server to testing and building production-ready artifacts.
+
+##🚀 Development Server
 
 ng serve
 
@@ -74,9 +77,52 @@ Navigate to http://localhost:4200
 
 The app reloads automatically when files change.
 
+##🛠️ Code Scaffolding
+
+Easily generate new Angular components, directives, or services with the CLI:
+
+ng generate component component-name
+
+For a complete list of available schematics:
+
+ng generate --help
+
+##📦 Building
+
+To build the project for production:
+
+ng build
+
+Compiled and optimized files will be available in the dist/ directory.
+
+##✅ Running Unit Tests
+
+Execute unit tests with Karma:
+
+ng test
+
+##🔎 Running End-to-End Tests
+
+Run automated e2e tests with:
+
+ng e2e
+
+⚠️ Note: Angular CLI does not include an e2e framework by default. You can integrate Cypress, Protractor, or Playwright based on your needs.
+
+##📚 Additional Resources
+
+Angular CLI Documentation
+
+Firebase Documentation
+
+A-Frame VR Documentation
+
+SCSS Documentation
+
+
 ## 🗄️ Firestore Database Structure
 
-```plaintext
+```bash
 Firestore Root
 │
 ├── users (collection)
@@ -125,3 +171,10 @@ Firestore Root
         ├── Date_Opened (timestamp)
         ├── Email
         └── Name
+
+📧 Contact
+
+For support or project-related queries:
+📩 cherinpappu207@gmail.com
+
+✨ Step into the future of book shopping with Biblius Maximus – where VR meets e-commerce!
