@@ -68,8 +68,6 @@ It combines **online book shopping** with **virtual reality**, giving users the 
 
 ## 🗄️ Firestore Database Structure
 
-## 🗄️ Firestore Database Structure
-
 ```plaintext
 Firestore Root
 │
@@ -165,6 +163,6 @@ SCSS Documentation
 
 📧 Contact
 
-Email: cherinpappu207@gmail.com
+📩 Email: cherinpappu207@gmail.com
 
-Step into the future of book shopping with Biblius Maximus – where VR meets e-commerce!
+✨ Step into the future of book shopping with Biblius Maximus – where VR meets e-commerce!
