@@ -117,6 +117,7 @@ Firestore Root
         ├── Date_Opened (timestamp)
         ├── Email
         └── Name 
+plaintext```
 ---
 
 📘 Developer Guide
