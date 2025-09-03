@@ -119,7 +119,7 @@ Firestore Root
         └── Name
 ---
 
-## 📘 Developer Guide
+### 📘 Developer Guide
 
 <details>
   <summary>Click to expand developer instructions</summary>
