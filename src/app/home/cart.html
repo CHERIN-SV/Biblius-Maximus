@@ -1,0 +1,40 @@
+<div class="vr-overlay" style="background: url('assets/bg2.gif') no-repeat center center fixed; background-size: cover; min-height: 500vh;">
+  <header class="header">
+    <h1 class="site-title">Biblius Maximus</h1>
+    <button class="hamburger" (click)="toggleMenu()">☰</button>
+
+  <!-- Slide-out nav -->
+  <nav class="side-nav" [class.open]="menuOpen">
+    <button class="close-btn" (click)="toggleMenu()">✕</button>
+    <button class="nav-btn" (click)="navigate('/profile')"><img [src]="selectedImage || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" /></button><hr>
+    <button class="nav-btn" (click)="navigate('/')">Home</button>
+    <button class="nav-btn" (click)="navigate('/products')">Products</button>
+    <button class="nav-btn" (click)="navigate('/cart')">Cart</button>
+    <button class="nav-btn" (click)="navigate('/contact')">Contact</button>
+    <button class="nav-btn" (click)="navigate('/help')">Help</button>
+ <button class="nav-btn" (click)="navigate('/mybooks')">My Books</button>
+     <button class="nav-btn" (click)="navigate('/admin')">Admin</button><hr>
+
+
+  </nav>
+  </header>
+
+  <nav class="nav-bar" [class.mobile-open]="menuOpen">
+    <a href="/" class="nav-item" (click)="closeMenu()">Home</a>
+    <a href="/products" class="nav-item" (click)="closeMenu()">Products</a>
+    <a href="/cart" class="nav-item" (click)="closeMenu()">Cart</a>
+    <a href="/contact" class="nav-item" (click)="closeMenu()">Contact</a>
+    <a href="/help" class="nav-item" (click)="closeMenu()">Help</a>
+    <a href="/mybooks" class="nav-item" (click)="closeMenu()">My Books</a>
+    <a href="/profile" class="nav-item profile" (click)="closeMenu()">
+      <img [src]="selectedImage || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" />
+    </a>
+     <a href="/admin" class="nav-item" (click)="closeMenu()">Admin</a>
+  </nav>
+
+  <div class="cart-page">
+  <div id="cartDisplay" class="cart-container"></div>
+</div>
+
+
+</div>

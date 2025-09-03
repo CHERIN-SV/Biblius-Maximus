@@ -1,0 +1,74 @@
+<div class="vr-overlay" style="background: url('/assets/bg.gif') no-repeat center center fixed; background-size: cover; min-height: 500vh;">
+  <!-- 🌌 Header Section -->
+  <header class="header">
+    <h1 class="site-title">Biblius Maximus</h1>
+    <button class="hamburger" (click)="toggleMenu()">☰</button>
+
+  <!-- Slide-out nav -->
+  <nav class="side-nav" [class.open]="menuOpen">
+    <button class="close-btn" (click)="toggleMenu()">✕</button>
+    <button class="nav-btn" (click)="navigate('/profile1')"><img [src]="selectedImages || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" /></button><hr>
+    <button class="nav-btn" (click)="navigate('/home1')">Home</button>
+    <button class="nav-btn" (click)="navigate('/work')">Products</button>
+    <button class="nav-btn" (click)="navigate('/contact1')">Contact</button>
+    <button class="nav-btn" (click)="navigate('/help1')">Help</button><hr>
+
+  </nav>
+  </header>
+
+  <!-- 🌐 Navigation Menu -->
+  <nav class="nav-bar" [class.mobile-open]="menuOpen">
+    <a href="/home1" class="nav-item" (click)="closeMenu()">Home</a>
+    <a href="/work" class="nav-item" (click)="closeMenu()">Products</a>
+    <a href="/contact1" class="nav-item" (click)="closeMenu()">Contact</a>
+    <a href="/help1" class="nav-item" (click)="closeMenu()">Help</a>
+    <a href="/profile1" class="nav-item profile" (click)="closeMenu()">
+      <img [src]="selectedImages || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" />
+    </a>
+  </nav>
+
+  <div style="text-align: center; margin-top: 2rem;">
+    <h2 style="color: white;">📚 MY PRODUCTS</h2>
+    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+  <div style="
+    display: flex; 
+    align-items: center; 
+    background: white; 
+    border-radius: 24px; 
+    padding: 0.5rem 1rem; 
+    width: 500px; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  ">
+    <input 
+      type="text" 
+      placeholder="Search for books..." 
+      id="searchInput"
+      (keyup.enter)="searchBooksManual()"
+      style="
+        flex: 1; 
+        border: none; 
+        outline: none; 
+        font-size: 1rem;
+      "
+    />
+    <button 
+      (click)="searchBooksManual()" 
+      style="
+        background: none; 
+        border: none; 
+        cursor: pointer;
+        font-size: 1.2rem;
+      "
+    >
+      🔍
+    </button>
+  </div>
+</div>
+
+    <div id="categoryContainer" style="display: flex; flex-wrap: wrap; justify-content: center;"></div>
+    
+    <div id="booksDisplay" style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 2rem; gap: 2rem;"></div>
+  </div>
+
+  
+</div>

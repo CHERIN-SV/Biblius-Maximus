@@ -1,0 +1,48 @@
+.buy-now-container {
+   background: rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(10px);
+   color: #fff;
+   padding: 2rem;
+   border-radius: 20px;
+   max-width: 600px;
+   margin: auto;
+   box-shadow: 0 0 15px #000;
+   .book-info {
+     text-align: center;
+     img {
+       max-width: 150px;
+       border-radius: 10px;
+     }
+     .desc {
+       font-size: 1rem;
+       margin: 1rem 0;
+     }
+     .stock, .price {
+       font-size: 1.1rem;
+       font-weight: bold;
+     }
+   }
+  .payment-section {
+     margin-top: 2rem;
+     text-align: center;
+     button {
+       margin: 0.5rem;
+       padding: 0.7rem 1.5rem;
+       border-radius: 10px;
+       font-weight: bold;
+       border: none;
+       background: gold;
+       color: black;
+       cursor: pointer;
+       &:hover {
+         background: #f5c518;
+       }
+     }
+    }
+ }
+
+ .no-book {
+   text-align: center;
+   color: white;
+   margin-top: 3rem;
+ }

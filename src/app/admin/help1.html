@@ -1,0 +1,46 @@
+<div class="vr-overlay" style="background: url('assets/bg2.gif') no-repeat center center fixed; background-size: cover; min-height: 500vh;">
+  <!-- 🌌 Header Section -->
+  <header class="header">
+    <h1 class="site-title">Biblius Maximus</h1>
+    <button class="hamburger" (click)="toggleMenu()">☰</button>
+
+  <!-- Slide-out nav -->
+  <nav class="side-nav" [class.open]="menuOpen">
+    <button class="close-btn" (click)="toggleMenu()">✕</button>
+    <button class="nav-btn" (click)="navigate('/profile1')"><img [src]="selectedImages || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" /></button><hr>
+    <button class="nav-btn" (click)="navigate('/home1')">Home</button>
+    <button class="nav-btn" (click)="navigate('/work')">Products</button>
+    <button class="nav-btn" (click)="navigate('/contact1')">Contact</button>
+    <button class="nav-btn" (click)="navigate('/help1')">Help</button><hr>
+
+  </nav>
+  </header>
+
+  <!-- 🌐 Navigation Menu -->
+  <nav class="nav-bar" [class.mobile-open]="menuOpen">
+    <a href="/home1" class="nav-item" (click)="closeMenu()">Home</a>
+    <a href="/work" class="nav-item" (click)="closeMenu()">Products</a>
+    <a href="/contact1" class="nav-item" (click)="closeMenu()">Contact</a>
+    <a href="/help1" class="nav-item" (click)="closeMenu()">Help</a>
+    <a href="/profile1" class="nav-item profile" (click)="closeMenu()">
+      <img [src]="selectedImages || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" />
+    </a>
+  </nav>
+
+  <p class="app-description">
+  <strong>Welcome to Biblius Maximus – Entrepreneur Edition</strong> 🚀<br><br>
+  Step into the future of book commerce, where innovation, virtual reality, and entrepreneurship merge into one powerful platform. Biblius Maximus isn’t just a VR library – it’s a business opportunity to redefine how readers and sellers connect in the digital age.<br><br><br>
+  
+  💼 <strong>Entrepreneurial Growth:</strong> Manage your own digital bookstore in a stunning VR environment, reaching global audiences like never before.<br><br>
+  📚 <strong>Smart Inventory:</strong> Upload, showcase, and update books dynamically with detailed descriptions, author insights, and live ratings.<br><br>
+  💳 <strong>Seamless Transactions:</strong> Offer customers secure payment methods including Razorpay, Google Pay, and Cash on Delivery.<br><br>
+  🎁 <strong>Engagement Boost:</strong> Surprise users every month with the magical <em>Talismanic Tome</em> – strengthening loyalty with personalized gift books.<br><br>
+  📊 <strong>Analytics & Orders:</strong> Track purchases, manage customer carts, and download modern invoices or gift receipts instantly.<br><br>
+  🌐 <strong>Global Reach:</strong> Expand your readership while offering multilingual support and personalized profiles for every customer.<br><br><br>
+  
+  Biblius Maximus Entrepreneur empowers visionaries, authors, and book enthusiasts to turn passion into enterprise. 📖✨<br><br>
+  <em>Transform your bookstore into a thriving digital venture today.</em>
+</p>
+
+
+</div>

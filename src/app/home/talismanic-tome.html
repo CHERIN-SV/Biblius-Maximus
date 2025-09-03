@@ -1,0 +1,83 @@
+<div class="vr-overlay">
+  <!-- 🌌 Header Section -->
+  <header class="header">
+    <h1 class="site-title">Biblius Maximus</h1>
+    <button class="hamburger" (click)="toggleMenu()">☰</button>
+
+  <!-- Slide-out nav -->
+  <nav class="side-nav" [class.open]="menuOpen">
+    <button class="close-btn" (click)="toggleMenu()">✕</button>
+    <button class="nav-btn" (click)="navigate('/profile')"><img [src]="selectedImage || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" /></button><hr>
+    <button class="nav-btn" (click)="navigate('/')">Home</button>
+    <button class="nav-btn" (click)="navigate('/products')">Products</button>
+    <button class="nav-btn" (click)="navigate('/cart')">Cart</button>
+    <button class="nav-btn" (click)="navigate('/contact')">Contact</button>
+    <button class="nav-btn" (click)="navigate('/help')">Help</button>
+    <button class="nav-btn" (click)="navigate('/mybooks')">My Books</button>
+    <button class="nav-btn" (click)="navigate('/admin')">Admin</button><hr>
+  </nav>
+  </header>
+
+  <!-- 🌐 Navigation Menu -->
+  <nav class="nav-bar" [class.mobile-open]="menuOpen">
+    <a href="/" class="nav-item" (click)="closeMenu()">Home</a>
+    <a href="/products" class="nav-item" (click)="closeMenu()">Products</a>
+    <a href="/cart" class="nav-item" (click)="closeMenu()">Cart</a>
+    <a href="/contact" class="nav-item" (click)="closeMenu()">Contact</a>
+    <a href="/help" class="nav-item" (click)="closeMenu()">Help</a>
+      <a href="/mybooks" class="nav-item" (click)="closeMenu()">My Books</a>
+    <a href="/profile" class="nav-item profile" (click)="closeMenu()">
+    
+      <img [src]="selectedImage || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" />
+    </a>
+     <a href="/admin" class="nav-item" (click)="closeMenu()">Admin</a>
+
+  </nav>
+
+  <!-- 🎁 Gift Message -->
+  <div class="talismanic-vr" [hidden]="!messageShown" id="giftReceiptWrapper" style="text-align: center; padding: 20px;">
+    <audio id="printSound" src="assets/print.mp3" autoplay></audio>
+
+    <div id="receiptContent" style="display: inline-block; border: 2px dashed #444; padding: 20px; background: #fff; font-family: 'Courier New', monospace; width: 280px; animation: printIn 2s ease;">
+      <h3 style="margin-bottom: 10px;">🎁 Gift Receipt 🎁</h3>
+      <p>Dear Reader,</p>
+      <p>Your present is ready for you.</p>
+      <p><strong>Happy reading!</strong></p>
+      <button (click)="downloadPDF()" class="download-btn">Download Gift Receipt</button>
+    </div>
+  </div>
+</div>
+
+<!-- 🎥 A-Frame VR Scene -->
+<a-scene cursor="rayOrigin: mouse">
+  <a-assets>
+    <img id="library360" src="assets/lib.png" crossorigin="anonymous" />
+    <img id="book1Img" [src]="giftBooks[0]?.Image" crossorigin="anonymous" />
+    <img id="book2Img" [src]="giftBooks[1]?.Image" crossorigin="anonymous" />
+    <img id="book3Img" [src]="giftBooks[2]?.Image" crossorigin="anonymous" />
+  </a-assets>
+
+  <a-sky src="#library360" rotation="0 -85 0.9"></a-sky>
+  <a-light type="ambient" color="#ffffff"></a-light>
+
+  <!-- 📘 Book 1 -->
+  <a-plane id="book1" class="book-offer" color="#ff4081" height="3" width="3"
+           position="-10 1 2" rotation="0 90 10"
+           [visible]="!bookSelected"
+           (click)="selectBook(giftBooks[0],0)">
+  </a-plane>
+
+  <!-- 📘 Book 2 -->
+  <a-plane id="book2" class="book-offer" color="#448aff" height="3" width="3"
+           position="0 1 -4" rotation="0 0 0"
+           [visible]="!bookSelected"
+           (click)="selectBook(giftBooks[1],1)">
+  </a-plane>
+
+  <!-- 📘 Book 3 -->
+  <a-plane id="book3" class="book-offer" color="#00e676" height="3" width="3"
+           position="10 1 2" rotation="0 -90 -10"
+           [visible]="!bookSelected"
+           (click)="selectBook(giftBooks[2],2)">
+  </a-plane>
+</a-scene>

@@ -1,0 +1,84 @@
+<div class="vr-overlay" style="background: url('/assets/bg3.jpg') no-repeat center center fixed; background-size: cover; min-height: 500vh;">
+  <!-- 🌌 Header Section -->
+  <header class="header">
+    <h1 class="site-title">Biblius Maximus</h1>
+    <button class="hamburger" (click)="toggleMenu()">☰</button>
+
+  <!-- Slide-out nav -->
+  <nav class="side-nav" [class.open]="menuOpen">
+    <button class="close-btn" (click)="toggleMenu()">✕</button>
+    <button class="nav-btn" (click)="navigate('/profile1')"><img [src]="selectedImages || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" /></button><hr>
+    <button class="nav-btn" (click)="navigate('/home1')">Home</button>
+    <button class="nav-btn" (click)="navigate('/work')">Products</button>
+    <button class="nav-btn" (click)="navigate('/contact1')">Contact</button>
+    <button class="nav-btn" (click)="navigate('/help1')">Help</button><hr>
+
+  </nav>
+  </header>
+
+  <!-- 🌐 Navigation Menu -->
+  <nav class="nav-bar" [class.mobile-open]="menuOpen">
+    <a href="/home1" class="nav-item" (click)="closeMenu()">Home</a>
+    <a href="/work" class="nav-item" (click)="closeMenu()">Products</a>
+    <a href="/contact1" class="nav-item" (click)="closeMenu()">Contact</a>
+    <a href="/help1" class="nav-item" (click)="closeMenu()">Help</a>
+    <a href="/profile1" class="nav-item profile" (click)="closeMenu()">
+      <img [src]="selectedImages || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" />
+    </a>
+  </nav>
+<div class="admin-container">
+  <h1>📚 Admin Home</h1>
+
+  <!-- Add Category -->
+  <div class="form-section">
+    <h2>Add New Category</h2><br>
+    <input type="text" [(ngModel)]="categoryName" placeholder="Category Name" />
+    <button (click)="addCategory()">Add Category</button>
+  </div><br>
+
+  <hr />
+  <h2 style="color: #00ffff;">Available Categories</h2><br>
+
+  <!-- Category Tags -->
+  <div class="tags">
+    <span *ngFor="let cat of categories"
+          [class.active]="cat === bookCategory"
+          (click)="selectCategory(cat)">
+      {{ cat }}
+    </span>
+  </div><br><hr/><br>
+
+  <!-- Add Book -->
+  <div class="form-section">
+    <h2>Add New Book</h2><br>
+    <p *ngIf="bookCategory">📂 Selected Category: <b>{{ bookCategory }}</b></p>
+    
+    <input type="text" [(ngModel)]="bookName" placeholder="Book Name" />
+    <input type="text" [(ngModel)]="author" placeholder="Author" />
+    <textarea [(ngModel)]="description" placeholder="Description"></textarea>
+    <input type="number" [(ngModel)]="price" placeholder="Price" />
+    <input type="number" [(ngModel)]="rating" placeholder="Rating (1-5)" />
+    <input type="number" [(ngModel)]="stock" placeholder="Stock Quantity" />
+    
+    <input type="file" (change)="onImageSelect($event)" />
+
+    <!-- Show file name -->
+    <p *ngIf="imageFile">📷 Selected Image: {{ imageFile.name }}</p>
+
+    <!-- Show preview -->
+    <img *ngIf="imagePreview" 
+         [src]="imagePreview | safeUrl" 
+         alt="Preview" 
+         width="120" 
+         height="150" />
+
+    <!-- Show uploaded URL -->
+    <p *ngIf="imageUrl">✅ Uploaded URL: <a [href]="imageUrl" target="_blank">{{ imageUrl }}</a></p>
+
+    <hr/>
+
+    <button (click)="addBook()">Add Book</button>
+  </div>
+</div>
+
+</div>

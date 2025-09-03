@@ -1,0 +1,57 @@
+<div class="vr-overlay" style="background: url('assets/bg4.png') no-repeat center center fixed; background-size: cover; min-height: 500vh;">
+  <!-- 🌌 Header Section -->
+  <header class="header">
+    <h1 class="site-title">Biblius Maximus</h1>
+    <button class="hamburger" (click)="toggleMenu()">☰</button>
+
+  <!-- Slide-out nav -->
+  <nav class="side-nav" [class.open]="menuOpen">
+    <button class="close-btn" (click)="toggleMenu()">✕</button>
+    <button class="nav-btn" (click)="navigate('/profile1')"><img [src]="selectedImages || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" /></button><hr>
+    <button class="nav-btn" (click)="navigate('/home1')">Home</button>
+    <button class="nav-btn" (click)="navigate('/work')">Products</button>
+    <button class="nav-btn" (click)="navigate('/contact1')">Contact</button>
+    <button class="nav-btn" (click)="navigate('/help1')">Help</button><hr>
+
+  </nav>
+  </header>
+
+  <!-- 🌐 Navigation Menu -->
+  <nav class="nav-bar" [class.mobile-open]="menuOpen">
+    <a href="/home1" class="nav-item" (click)="closeMenu()">Home</a>
+    <a href="/work" class="nav-item" (click)="closeMenu()">Products</a>
+    <a href="/contact1" class="nav-item" (click)="closeMenu()">Contact</a>
+    <a href="/help1" class="nav-item" (click)="closeMenu()">Help</a>
+    <a href="/profile1" class="nav-item profile" (click)="closeMenu()">
+      <img [src]="selectedImages || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" />
+    </a>
+  </nav>
+
+  <!-- 📬 Contact Section -->
+  <section class="contact-container">
+    <h2>📬 Stay Tuned</h2>
+    <p class="intro">We'd love to hear from you! Whether you have questions, suggestions, or just want to say hello.</p>
+
+    <div class="contact-box">
+      <div class="info">
+        <h3>Contact Info</h3>
+        <p><strong>Email:</strong> cherinpappu207&#64;gmail.com</p>
+        <p><strong>Phone:</strong> +91 63747 09419</p>
+        <p><strong>Location:</strong> Tiruchendur, Tamil Nadu, India</p>
+      </div>
+
+      <form class="form" (submit)="submitMessage(); $event.preventDefault()">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="name" placeholder="Your Name" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Your Email" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" [(ngModel)]="message" placeholder="Write your message..."></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,67 @@
+<div class="vr-overlay">
+  <!-- 🌌 Header Section -->
+  <header class="header">
+    <h1 class="site-title">Biblius Maximus</h1>
+    <button class="hamburger" (click)="toggleMenu()">☰</button>
+
+  <!-- Slide-out nav -->
+  <nav class="side-nav" [class.open]="menuOpen">
+    <button class="close-btn" (click)="toggleMenu()">✕</button>
+    <button class="nav-btn" (click)="navigate('/profile')"><img [src]="selectedImage || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" /></button><hr>
+    <button class="nav-btn" (click)="navigate('/')">Home</button>
+    <button class="nav-btn" (click)="navigate('/products')">Products</button>
+    <button class="nav-btn" (click)="navigate('/cart')">Cart</button>
+    <button class="nav-btn" (click)="navigate('/contact')">Contact</button>
+    <button class="nav-btn" (click)="navigate('/help')">Help</button>
+    <button class="nav-btn" (click)="navigate('/mybooks')">My Books</button>
+     <button class="nav-btn" (click)="navigate('/admin')">Admin</button><hr>
+
+  </nav>
+  </header>
+
+  <!-- 🌐 Navigation Menu -->
+  <nav class="nav-bar" [class.mobile-open]="menuOpen">
+    <a href="/" class="nav-item" (click)="closeMenu()">Home</a>
+    <a href="/products" class="nav-item" (click)="closeMenu()">Products</a>
+    <a href="/cart" class="nav-item" (click)="closeMenu()">Cart</a>
+    <a href="/contact" class="nav-item" (click)="closeMenu()">Contact</a>
+    <a href="/help" class="nav-item" (click)="closeMenu()">Help</a>
+    <a href="/mybooks" class="nav-item" (click)="closeMenu()">My Books</a>
+    <a href="/profile" class="nav-item profile" (click)="closeMenu()">
+      <img [src]="selectedImage || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" />
+    </a>
+    <a href="/admin" class="nav-item" (click)="closeMenu()">Admin</a>
+    
+  </nav>
+  
+   <nav class="nav-bars" [class.mobile-open]="menuOpen">
+  <!-- 📚 Talismanic Tome Portal -->
+<section class="talismanic-tome" >
+  <!-- Show active link only if not opened -->
+  <div [hidden]="!showTome">
+    <div (click)="goToTalismanicTome()" class="tome-image" style="cursor: pointer;">
+      <img src="assets/TT.jpg" alt="Talismanic Tome" />
+      <h2 class="tome-title">Talismanic Tome</h2>
+    </div>
+  </div>
+
+  <!-- Show locked message and countdown if already opened -->
+  <div class="tome-image locked" [hidden]="showTome" style="pointer-events: none;">
+    <img src="assets/TT.jpg" alt="Talismanic Tome" style="opacity: 0.3;" />
+    <h2 class="tome-title">Already Opened</h2>
+  </div>
+</section>
+
+</nav>
+</div>
+
+<!-- 🧠 A-Frame VR Scene -->
+<a-scene>
+  <a-assets>
+    <img id="library360" src="assets/vr-library.png" crossorigin="anonymous" />
+    <a-asset-item id="exoFont" src="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-asset-item>
+  </a-assets>
+
+  <a-sky src="#library360" rotation="0 -90 0"></a-sky>
+  <a-light type="ambient" color="#ffffff"></a-light>
+</a-scene>

@@ -1,0 +1,49 @@
+<h1 class="app-title" align="center">📚 Biblius Maximus</h1>
+<button 
+  style="margin-top: 15px; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #00ffff; background: transparent; color: #00ffff; font-size: 1rem; cursor: pointer; float: right;"
+  (click)="navigateToAdmin()">
+  Admin
+</button>
+
+
+<div class="auth-container">
+  <h2>{{ isLoginMode ? 'Login' : 'Register' }}</h2>
+
+  <form (ngSubmit)="submit()">
+    <!-- Shared Fields -->
+    <input type="email" name="email" [(ngModel)]="email" placeholder="Email" required />
+    <input type="password" name="password" [(ngModel)]="password" placeholder="Password" required />
+
+    <!-- Registration Only -->
+    <ng-container *ngIf="!isLoginMode">
+      <input type="text" name="name" [(ngModel)]="name" placeholder="Full Name" required />
+      <input type="tel" name="phone" [(ngModel)]="phone" placeholder="Phone Number" pattern="[0-9]{10}" required />
+      <input type="date" name="dob" [(ngModel)]="dob" required />
+
+      <!-- ✅ Address & CAPTCHA moved below -->
+      <textarea name="address" [(ngModel)]="address" placeholder="Address" required
+        style="height: 50px; width: 100%;"></textarea>
+
+      <div class="captcha-box">
+        <span class="captcha-text">{{ captcha }}</span>
+        &nbsp; &nbsp;
+        <button type="button" (click)="generateCaptcha()">⟳</button>
+      </div>
+
+      <input type="text" name="enteredCaptcha" [(ngModel)]="enteredCaptcha" placeholder="Enter CAPTCHA" required />
+    </ng-container>
+
+    <!-- ✅ Login/Register Button -->
+    <br />
+    <button type="submit">{{ isLoginMode ? 'Login' : 'Register' }}</button>
+  </form>
+
+  <p>
+  <a href="#" (click)="toggleMode(); $event.preventDefault()">
+    {{ isLoginMode ? "Don't have an account? Register" : "Already have an account? Login" }}
+  </a>
+  <br />
+  <a *ngIf="isLoginMode" href="#" (click)="forgotPassword(); $event.preventDefault()">Forgot Password?</a>
+</p>
+
+</div>

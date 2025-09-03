@@ -1,0 +1,48 @@
+<div class="vr-overlay" style="background: url('assets/bg3.jpg') no-repeat center center fixed; background-size: cover; min-height: 500vh;">  <!-- 🌌 Header Section -->
+  <header class="header">
+    <h1 class="site-title">Biblius Maximus</h1>
+<button class="hamburger" (click)="toggleMenu()">☰</button>
+
+  <!-- Slide-out nav -->
+  <nav class="side-nav" [class.open]="menuOpen">
+    <button class="close-btn" (click)="toggleMenu()">✕</button>
+    <button class="nav-btn" (click)="navigate('/profile')"><img [src]="selectedImage || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" /></button><hr>
+    <button class="nav-btn" (click)="navigate('/')">Home</button>
+    <button class="nav-btn" (click)="navigate('/products')">Products</button>
+    <button class="nav-btn" (click)="navigate('/cart')">Cart</button>
+    <button class="nav-btn" (click)="navigate('/contact')">Contact</button>
+    <button class="nav-btn" (click)="navigate('/help')">Help</button>
+    <button class="nav-btn" (click)="navigate('/mybooks')">My Books</button>
+     <button class="nav-btn" (click)="navigate('/admin')">Admin</button><hr>
+
+  </nav>
+  </header>
+
+  <!-- 🌐 Navigation Menu -->
+  <nav class="nav-bar" [class.mobile-open]="menuOpen">
+    <a href="/" class="nav-item" (click)="closeMenu()">Home</a>
+    <a href="/products" class="nav-item" (click)="closeMenu()">Products</a>
+    <a href="/cart" class="nav-item" (click)="closeMenu()">Cart</a>
+    <a href="/contact" class="nav-item" (click)="closeMenu()">Contact</a>
+    <a href="/help" class="nav-item" (click)="closeMenu()">Help</a>
+    <a href="/mybooks" class="nav-item" (click)="closeMenu()">My Books</a>
+    <a href="/profile" class="nav-item profile" (click)="closeMenu()">
+      <img [src]="selectedImage || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" />
+    </a>
+    <a href="/admin" class="nav-item" (click)="closeMenu()">Admin</a>
+  </nav>
+
+  <p class="app-description">
+  <strong>Welcome to Biblius Maximus</strong> – your ultimate virtual gateway into the world of books. 🌟<br><br>
+  Experience a revolutionary reading journey where the charm of books meets the power of immersive virtual reality. Biblius Maximus isn’t just a bookstore – it's a vibrant digital library where you can browse, explore, and interact with books like never before.<br><br><br><br>
+  🧠 Discover books across diverse genres in a beautifully designed VR environment.<br><br>
+  📚 View detailed descriptions, ratings, and author insights with animated book interactions.<br><br>
+  💳 Shop smart with multiple payment options like Razorpay, Google Pay, or Cash on Delivery.<br><br>
+  🎁 Unlock a surprise every month through our magical <em>Talismanic Tome</em> – a gift book handpicked just for you.<br><br>
+  🛒 Add books to your cart, manage orders, and download stylish gift receipts or invoices.<br><br>
+  📱 Access your personalized profile, change settings, request refunds, or update your language preferences with ease.<br><br><br>
+  Whether you're a casual reader or a passionate bibliophile, Biblius Maximus invites you into a new era of storytelling where imagination meets innovation. 📖✨<br><br>
+  <em>Dive in and let your virtual bookshelf come alive!</em>
+</p>
+
+</div>

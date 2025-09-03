@@ -1,0 +1,63 @@
+<h1 class="app-title" align="center">📚 Biblius Maximus</h1>
+<button 
+  style="margin-top: 15px; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #00ffff; background: transparent; color: #00ffff; font-size: 1rem; cursor: pointer; float: right;"
+  (click)="navigateToUser()">
+  User
+</button>
+
+<div class="auth-container">
+  <h2 align="center" style="color: white;"> 📚🗝️ Welcome Archivist</h2>
+  <h2>{{ isLoginMode ? 'Login' : 'Register' }}</h2>
+
+  <form (ngSubmit)="submit()">
+    <!-- Shared Fields -->
+    <input type="email" name="email" [(ngModel)]="email" placeholder="Email" required />
+    <input type="password" name="password" [(ngModel)]="password" placeholder="Password" required />
+
+    <!-- Registration Only -->
+    <ng-container *ngIf="!isLoginMode">
+      <input type="text" name="name" [(ngModel)]="name" placeholder="Full Name" required />
+      <input type="tel" name="phone" [(ngModel)]="phone" placeholder="Phone Number" pattern="[0-9]{10}" required />
+      <input type="date" name="dob" [(ngModel)]="dob" required />
+
+      <!-- Entrepreneur Specific Fields -->
+      <input type="text" name="businessName" [(ngModel)]="businessName" placeholder="Business Name" required />
+      <input type="text" name="gstNumber" [(ngModel)]="gstNumber" placeholder="GST / Tax ID" required />
+      <input type="text" name="bankAccount" [(ngModel)]="bankAccount" placeholder="Bank Account Number" required />
+      <input type="text" name="upiId" [(ngModel)]="upiId" placeholder="UPI ID" required />
+      <input type="text" name="bookCategory" [(ngModel)]="bookCategory" placeholder="Book Category Focus" required />
+
+      <!-- Address -->
+      <textarea name="address" [(ngModel)]="address" placeholder="Address" required
+        style="height: 50px; width: 100%;"></textarea>
+
+      <!-- CAPTCHA -->
+      <div class="captcha-box">
+        <span class="captcha-text">{{ captcha }}</span>
+        &nbsp; &nbsp;
+        <button type="button" (click)="generateCaptcha()">⟳</button>
+      </div>
+      <input type="text" name="enteredCaptcha" [(ngModel)]="enteredCaptcha" placeholder="Enter CAPTCHA" required />
+
+      <!-- Terms & Conditions -->
+      <div style="margin-top: 10px; color: white; font-size: 0.9rem;">
+        <label>
+          <input type="checkbox" [(ngModel)]="acceptedTerms" name="acceptedTerms" required />
+          I accept the <a href="/term1" target="_blank" style="color: #00ffff; text-decoration: underline;">Terms & Conditions</a>
+        </label>
+      </div>
+    </ng-container>
+
+    <!-- ✅ Login/Register Button -->
+    <br />
+    <button type="submit">{{ isLoginMode ? 'Login' : 'Register' }}</button>
+  </form>
+
+  <p>
+    <a href="#" (click)="toggleMode(); $event.preventDefault()">
+      {{ isLoginMode ? "Don't have an account? Register" : "Already have an account? Login" }}
+    </a>
+    <br />
+    <a *ngIf="isLoginMode" href="#" (click)="forgotPassword(); $event.preventDefault()">Forgot Password?</a>
+  </p>
+</div>
