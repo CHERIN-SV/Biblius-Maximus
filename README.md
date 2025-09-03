@@ -118,7 +118,7 @@ Firestore Root
         └── Name```
 
 
-📘 Developer Guide
+###📘 Developer Guide
 🚀 Development Server
 ng serve
 
