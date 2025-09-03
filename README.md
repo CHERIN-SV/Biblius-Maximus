@@ -116,52 +116,39 @@ Firestore Root
         ├── Book_Title
         ├── Date_Opened (timestamp)
         ├── Email
-        └── Name ```
+        └── Name 
 ---
 
-### 📘 Developer Guide
-
-<details>
-  <summary>Click to expand developer instructions</summary>
-
----
-
-🚀 **Development Server**  
-Start the local dev server:  
-```bash
+📘 Developer Guide
+🚀 Development Server
 ng serve
-Navigate to http://localhost:4200/
+
+
+Navigate to http://localhost:4200
+
 The app reloads automatically when files change.
 
 🛠️ Code Scaffolding
-Generate a new component:
-
-bash
-Copy code
 ng generate component component-name
+
+
 For a full list of schematics:
 
-bash
-Copy code
 ng generate --help
-📦 Building
-Build the project for production:
 
-bash
-Copy code
+📦 Building
 ng build
+
+
 Artifacts will be stored in the dist/ directory.
 
 ✅ Running Unit Tests
-
-bash
-Copy code
 ng test
-🔎 Running End-to-End Tests
 
-bash
-Copy code
+🔎 Running End-to-End Tests
 ng e2e
+
+
 ⚠️ Angular CLI does not include an e2e framework by default. Use Cypress, Protractor, or Playwright.
 
 📚 Additional Resources
@@ -178,8 +165,4 @@ SCSS Documentation
 
 Email: cherinpappu207@gmail.com
 
-Phone: +91 6374709419
-
-🚀 Step into the future of book shopping with Biblius Maximus – where VR meets e-commerce!
-
-</details> 
+Step into the future of book shopping with Biblius Maximus – where VR meets e-commerce!
