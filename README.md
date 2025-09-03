@@ -65,6 +65,14 @@ It combines **online book shopping** with **virtual reality**, giving users the 
 - Clicking a category button loads books dynamically with stock & price updates.  
 
 ---
+📘 Developer Guide
+🚀 Development Server
+
+ng serve
+
+Navigate to http://localhost:4200
+
+The app reloads automatically when files change.
 
 ## 🗄️ Firestore Database Structure
 
@@ -117,12 +125,3 @@ Firestore Root
         ├── Date_Opened (timestamp)
         ├── Email
         └── Name
-
-📘 Developer Guide
-🚀 Development Server
-
-ng serve
-
-Navigate to http://localhost:4200
-
-The app reloads automatically when files change.
