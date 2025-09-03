@@ -172,9 +172,9 @@ Firestore Root
         ├── Email
         └── Name
 
-### 📧 Contact
+📧 Contact
 
 For support or project-related queries:
-**📩 cherinpappu207@gmail.com**
+📩 cherinpappu207@gmail.com
 
 ✨ Step into the future of book shopping with Biblius Maximus – where VR meets e-commerce!
