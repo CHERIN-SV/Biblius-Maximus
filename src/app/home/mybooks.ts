@@ -49,6 +49,7 @@ export class MyBooksComponent implements OnInit {
   }
 
   // 📥 Load orders from Firestore
+    // 📥 Load orders from Firestore
   private async loadOrders() {
     if (!this.userEmail) return;
 
@@ -56,27 +57,31 @@ export class MyBooksComponent implements OnInit {
     const q = query(collection(this.firestore, 'order'), where('email', '==', this.userEmail));
     const snap = await getDocs(q);
 
-    this.orders = snap.docs.map(d => {
-      const data: any = d.data();
-      return {
-        id: d.id,
-        book: data.book || 'Untitled',
-        author: data.author || 'Unknown',
-        category: data.category || 'General',
-        price: data.price || 0,
-        quantity: data.quantity || 1,
-        paymentMode: data.paymentMode || 'N/A',
-        transactionId: data.transactionId || 'N/A',
-        address: data.address || '',
-        name: data.name || '',
-        timestamp: data.timestamp || null,
-        image: data.image || ''
-      };
-    });
+    this.orders = snap.docs
+      .map(d => {
+        const data: any = d.data();
+        return {
+          id: d.id,
+          book: data.book || 'Untitled',
+          author: data.author || 'Unknown',
+          category: data.category || 'General',
+          price: data.price || 0,
+          quantity: data.quantity || 1,
+          paymentMode: data.paymentMode || 'N/A',
+          transactionId: data.transactionId || 'N/A',
+          address: data.address || '',
+          name: data.name || '',
+          timestamp: data.timestamp || null,
+          image: data.image || '',
+          status: data.status || ''   // ✅ include status
+        };
+      })
+      .filter((order: any) => order.status !== 'received');  // ✅ fix chaining
 
     this.loading = false;
     this.renderOrders();
   }
+
 
   // ❌ Cancel an order
 async cancelOrder(orderId: string) {
