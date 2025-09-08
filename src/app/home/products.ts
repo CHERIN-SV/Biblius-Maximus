@@ -363,20 +363,21 @@ btn.onclick = async (e) => {
 
   async updateRating(category: string, bookId: string, newRating: number) {
   try {
-    // 1️⃣ Update rating in the user's history collection
+    // 1️⃣ Ensure user's history doc exists and update
     const userBookRef = doc(this.firestore, `history/${this.userEmail}/Books/${bookId}`);
-    await updateDoc(userBookRef, { rating: newRating });
+    await setDoc(userBookRef, { rating: newRating }, { merge: true });
 
     // 2️⃣ Update rating in the global books collection
     const globalBookRef = doc(this.firestore, `books/${category}/Books/${bookId}`);
-    await updateDoc(globalBookRef, { Rating: newRating });
+    await setDoc(globalBookRef, { Rating: newRating }, { merge: true });
 
-    alert(`Rating updated to ${newRating} in both history and global books.`);
+    alert(`⭐ Rating updated to ${newRating}!`);
   } catch (err) {
-    console.error(err);
+    console.error('Rating update failed:', err);
     alert('Failed to update rating.');
   }
 }
+
 
 
     async placeOrder(book: any, category: string, bookId: string, price: number) {
